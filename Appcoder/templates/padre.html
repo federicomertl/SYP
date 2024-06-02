@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    {% load static %}
+    <title>Hello Prepper</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header" class="alt">
+        <div class="logo"><a href="#">Hello <span>PREPPERS</span></a></div>
+        <a href="#menu">Menu</a>
+    </header>
+
+{%include 'navbar.html'%}
+
+    <!-- Banner -->
+    <section class="banner full">
+        <article>
+            <img src="{% static 'images/slide01.jpg' %}" alt="" width="1440" height="961">
+            <div class="inner">
+                <header>
+                    <p>Te enseñamos a prepararte <a href="https://www.youtube.com/@SyP1988">SyP</a></p>
+                    <h2>Sobrevivir y Prosperar</h2>
+                </header>
+            </div>
+        </article>
+        <article>
+            <img src="{% static 'images/slide02.jpg' %}" alt="" width="1440" height="961">
+            <div class="inner">
+                <header>
+                    <p>y el momento de prerarte es ahora</p>
+                    <h2>Sobrevivir y Prosperar</h2>
+                </header>
+            </div>
+        </article>
+        <article>
+            <img src="{% static 'images/slide03.jpg' %}" alt="" width="1440" height="962">
+            <div class="inner">
+                <header>
+                    <p>guias y consejos de supervivencia</p>
+                    <h2>Sobrevivir y Prosperar</h2>
+                </header>
+            </div>
+        </article>
+        <article>
+            <img src="{% static 'images/slide04.jpg' %}" alt="" width="1440" height="961">
+            <div class="inner">
+                <header>
+                    <p>y mucho mas! quedate y disfruta del contenido</p>
+                    <h2>Sobrevivir y Prosperar</h2>
+                </header>
+            </div>
+        </article>
+        
+    </section>
+    {% block contenidoQueCambia%}
+
+    {% endblock contenidoQueCambia%}
+    <!-- One -->
+    <section id="one" class="wrapper style2">
+        <div class="inner">
+            <div class="grid-style">
+
+                <div>
+                    <div class="box">
+                        <div class="image fit">
+                            <img src="{% static 'images/pic02.jpg' %}" alt="" width="600" height="300">
+                        </div>
+                        <div class="content">
+                            <header class="align-center">
+                                <p>logueate en nuestra pagina y obten informacion y guias para tus aventuras</p>
+                                <h2>Suscriptores</h2>
+                            </header>
+                            <p>Este espacio esta en vias de desarrollo, pero por favor ten presente que pronto tendras novedades.</p>
+                            <footer class="align-center">
+                                <a href="#" class="button alt">Learn More</a>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="box">
+                        <div class="image fit">
+                            <img src="{% static 'images/pic03.jpg' %}" alt="" width="600" height="300">
+                        </div>
+                        <div class="content">
+                            <header class="align-center">
+                                <p>Cuentanos tu historia</p>
+                                <h2>Experiencias</h2>
+                            </header>
+                            <p>Este espacio está dedicado para historias reales de nuestros suscriptores, dinos alguna vez tuviste un experiencia Prepper?</p>
+                            <footer class="align-center">
+                                <a href="#" class="button alt">Learn More</a>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Two -->
+    <section id="two" class="wrapper style3">
+        <div class="inner">
+            <header class="align-center">
+                <p>este espacio fue creado con la intención de trasmitirte todos los conocimientos necesarios para que puedas prepararte de manera correcta a los tiempos que están llegando.</p>
+                <h2>El tiempo de prepararse es AHORA!</h2>
+            </header>
+        </div>
+    </section>
+
+    <!-- Three -->
+    <section id="three" class="wrapper style2">
+        <div class="inner">
+            <header class="align-center">
+                <p class="special">Videos explicativos de conocimientos que en algunos casos pueden salvarte la vida </p>
+                <h2>SyP</h2>
+            </header>
+            <div class="gallery">
+                <div>
+                    <div class="image fit">
+                        <a href="https://www.youtube.com/watch?v=4L_GxL-nPSw&t=6s"><img src="{% static 'images\botiquin 1.png' %}" alt="" width="600" height="300"></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image fit">
+                        <a href="https://www.youtube.com/watch?v=tD5n2-geZ90&t=79s"><img src="{% static 'images\bolso de rancho.png' %}" alt="" width="600" height="300"></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image fit">
+                        <a href="https://www.youtube.com/watch?v=4g0gD01DBg8&t=4s"><img src="{% static 'images\encendedor.png' %}" alt="" width="600" height="300"></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image fit">
+                        <a href="https://www.youtube.com/watch?v=xG9usWcJTTI&t=306s"><img src="{% static 'images\edc..png' %}" alt="" width="600" height="300"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <ul class="icons">
+                
+                
+                <li><a href="https://www.instagram.com/sobreviviryprosperar/?igsh=dGc2bHQzYmg5dnVu" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+            </ul>
+        </div>
+    </footer>
+    <div class="copyright">
+        Made with <a href="https://templated.co/">Templated</a>.
+    </div>
+
+    <!-- Scripts -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'assets/js/skel.min.js' %}"></script>
+    <script src="{% static 'assets/js/util.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>

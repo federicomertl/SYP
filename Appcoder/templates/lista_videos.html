@@ -8,8 +8,11 @@
 <body>
     <h1>Lista de Videos</h1>
     <ul>
-        {% for video in videos %}
-            <li>{{ video.nombre }} - {{ video.numero }}</li>
+        {% for video in lista_videos %}
+            <li>
+                {{ video.nombre }} - {{ video.numero }} - 
+                <a href="{{ video.enlace_youtube }}" target="_blank">Ver en YouTube</a>
+            </li>
         {% endfor %}
     </ul>
 </body>
