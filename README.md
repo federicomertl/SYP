@@ -25,7 +25,7 @@ Clona el repositorio en tu máquina local:
 bash
 Copiar código
 
-git clone https://github.com/federicomertl/SYP.git
+   git clone https://github.com/federicomertl/SYP.git
 
 cd SYP
 
@@ -34,23 +34,23 @@ Instala las dependencias necesarias:
 bash
 Copiar código
 
-pip install -r requirements.txt
+  pip install -r requirements.txt
 
 Aplica las migraciones a la base de datos:
 
 bash
 Copiar código
 
-python manage.py migrate
+  python manage.py migrate
 
 (Opcional) Carga datos iniciales:
 
 bash
 Copiar código
 
-python manage.py loaddata initial_data.json
+  python manage.py loaddata initial_data.json
 
-Configuración
+Configuración (yo no use un entorno virtual)
 Asegúrate de tener un archivo .env en la raíz del proyecto con la configuración necesaria para tu entorno de desarrollo. Un ejemplo de archivo .env podría ser:
 
 makefile
@@ -64,7 +64,7 @@ Para ejecutar el servidor de desarrollo, utiliza el siguiente comando:
 bash
 Copiar código
 
-python manage.py runserver
+  python manage.py runserver
 
 Luego, abre tu navegador y ve a http://127.0.0.1:8000/ para ver la aplicación en acción.
 
