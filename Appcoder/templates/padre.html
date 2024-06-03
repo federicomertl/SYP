@@ -12,7 +12,7 @@
 
     <!-- Header -->
     <header id="header" class="alt">
-        <div class="logo"><a href="#">Hello <span>PREPPERS</span></a></div>
+        <div class="logo"><a href="https://www.youtube.com/@SyP1988">Hello <span>PREPPERS</span></a></div>
         <a href="#menu">Menu</a>
     </header>
 
@@ -76,9 +76,10 @@
                                 <p>logueate en nuestra pagina y obten informacion y guias para tus aventuras</p>
                                 <h2>Suscriptores</h2>
                             </header>
-                            <p>Este espacio esta en vias de desarrollo, pero por favor ten presente que pronto tendras novedades.</p>
+                            <p>Aqui puedes acceder a la lista de nuestros suscriptores y al formulario de suscriptores.</p>
                             <footer class="align-center">
-                                <a href="#" class="button alt">Learn More</a>
+                                <a href="{% url 'ListaSuscriptores' %}" class="button alt">Lista de suscriptores</a>
+                                <a href="{% url 'SuscriptorFormulario' %}" class="button alt">Formulario de suscriptores</a>
                             </footer>
                         </div>
                     </div>
@@ -94,9 +95,10 @@
                                 <p>Cuentanos tu historia</p>
                                 <h2>Experiencias</h2>
                             </header>
-                            <p>Este espacio está dedicado para historias reales de nuestros suscriptores, dinos alguna vez tuviste un experiencia Prepper?</p>
+                            <p>Este espacio está dedicado para historias reales de nuestros suscriptores, dinos alguna vez tuviste una experiencia Prepper?</p>
                             <footer class="align-center">
-                                <a href="#" class="button alt">Learn More</a>
+                                <a href="{% url 'ListaExperiencias' %}" class="button alt">Experiencias de usuarios</a>
+                                <a href="{% url 'ExperienciaFormulario' %}" class="button alt">cuentanos tu historia</a>
                             </footer>
                         </div>
                     </div>
@@ -155,7 +157,7 @@
                 
                 
                 <li><a href="https://www.instagram.com/sobreviviryprosperar/?igsh=dGc2bHQzYmg5dnVu" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+                
             </ul>
         </div>
     </footer>

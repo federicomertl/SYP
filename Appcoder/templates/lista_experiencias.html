@@ -1,0 +1,14 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+    <h1>Lista de Experiencias</h1>
+    <ul>
+        {% for Experiencia in lista_experiencias %}
+            <li>
+                {{ Experiencia.nickname}} - {{ Experiencia.fecha }} - {{ Experiencia.historia }} 
+                
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock contenidoQueCambia %}
