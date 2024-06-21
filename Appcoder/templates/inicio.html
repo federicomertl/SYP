@@ -2,8 +2,24 @@
 
 {% block contenidoQueCambia %}
 
-    <h1>Bienvenidos a Sobrevivir y prosperar</h1>
-
+<html>
+<head>
+    <style>
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+   
+    <h1 style="font-size: 30px;">Bienvenidos a Sobrevivir y prosperar</h1>
     <p>{{message}}</p>
+
+    {% if url %}
+    <img src="{{url}}" alt="avatar">
+
+    {% endif %}
     
 {% endblock contenidoQueCambia %}

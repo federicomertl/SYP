@@ -3,18 +3,92 @@
 <head>
     {% load static %}
     <title>Hello Prepper</title>
+    
     <meta charset="utf-8">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+<!-- Inline CSS -->
+<style>
+    .nav-links {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        gap: 55px;
+        justify-content: center; 
+        align-items: center;
+    }
+
+    .nav-links li {
+        display: inline;
+    }
+
+    .nav-links .nav-item {
+        font-size: 20px;
+        color: white;
+        text-decoration: none;
+        background-color: none;
+        padding: 10px;
+        border-radius: 50px;
+    }
+
+   
+   
+</style>
+<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
 </head>
 <body>
 
-    <!-- Header -->
-    <header id="header" class="alt">
-        <div class="logo"><a href="https://www.youtube.com/@SyP1988">Hello <span>PREPPERS</span></a></div>
-        <a href="#menu">Menu</a>
-    </header>
+<!-- Header -->
+<header id="header" class="alt">
+    <div class="logo"><a href="https://www.youtube.com/@SyP1988">Hello <span>PREPPERS</span></a></div>
+    
+    <ul class="nav-links">
+        
+        <li><a href="{% url 'home' %}" class="nav-item">Home</a></li>
+        {% if user.is_authenticated %}
+        <p>Bienvenido {{user.username}}</p>
+        
+        <form method="post" action="{% url 'Logout' %}"> {% csrf_token %}
+            <button class="btn btn-primary" type="submit">Logout</button>
+        </form>{% csrf_token %}
+        {% else %}
+        <a class="btn btn-primary" href="{% url 'Login' %}">Ingresar</a>
+        <a class="btn btn-primary" href="{% url 'Registrar' %}">Registro</a>
+
+        {% endif %}
+        
+        <div class="menu-container">
+            <a href="#menu" class="menu-link">Menu</a>
+        </div>
+        
+        <style>
+            .menu-container {
+                text-align: right;
+                padding: 0px; 
+                background-color: none; 
+            }
+        
+            .menu-link {
+                text-decoration: none; 
+                color: #f9f7f7; 
+                font-weight: bold; 
+                padding: 5px 10px; 
+            }
+        </style>
+    </ul>
+   
+</header>
+
+
 
 {%include 'navbar.html'%}
 
@@ -58,9 +132,21 @@
         </article>
         
     </section>
+    
     {% block contenidoQueCambia%}
-
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .content-block {
+            background-color: #333; /* Fondo oscuro */
+            color: #fff; /* Texto blanco */
+            padding: 20px;
+        }
+    </style>
     {% endblock contenidoQueCambia%}
+    
     <!-- One -->
     <section id="one" class="wrapper style2">
         <div class="inner">
@@ -76,10 +162,11 @@
                                 <p>logueate en nuestra pagina y obten informacion y guias para tus aventuras</p>
                                 <h2>Suscriptores</h2>
                             </header>
-                            <p>Aqui puedes acceder a la lista de nuestros suscriptores y al formulario de suscriptores.</p>
+                            <p>Aqui puedes acceder al login o tambien puedes suscribirte.</p>
+                            
                             <footer class="align-center">
-                                <a href="{% url 'ListaSuscriptores' %}" class="button alt">Lista de suscriptores</a>
-                                <a href="{% url 'SuscriptorFormulario' %}" class="button alt">Formulario de suscriptores</a>
+                                <a href="{% url 'Login' %}" class="button alt">Logueate</a>
+                                <a href="{% url 'Registrar' %}" class="button alt">Registrate</a>
                             </footer>
                         </div>
                     </div>
@@ -97,8 +184,10 @@
                             </header>
                             <p>Este espacio está dedicado para historias reales de nuestros suscriptores, dinos alguna vez tuviste una experiencia Prepper?</p>
                             <footer class="align-center">
+                                {% if user.is_authenticated %}
                                 <a href="{% url 'ListaExperiencias' %}" class="button alt">Experiencias de usuarios</a>
                                 <a href="{% url 'ExperienciaFormulario' %}" class="button alt">cuentanos tu historia</a>
+                                {% endif %}
                             </footer>
                         </div>
                     </div>

@@ -1,0 +1,13 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+  <h1>Confirm Delete</h1>
+  <p>Are you sure you want to delete the following message?</p>
+  <p><strong>{{ message.author.username }}:</strong> {{ message.content }}</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm</button>
+    <a href="{% url 'message_list' %}">Cancel</a>
+  </form>
+{% endblock contenidoQueCambia %}

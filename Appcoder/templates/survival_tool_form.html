@@ -1,0 +1,13 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+  
+  <h1>{% if tool %}Editar{% else %}Agregar{% endif %} Herramienta</h1>
+  
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Grabar</button>
+  </form>
+  <p><a href="{% url 'survival_tool_list' %}">Volver</a></p>
+{% endblock contenidoQueCambia %}

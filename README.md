@@ -1,33 +1,35 @@
 
-SYP - Sobrevivir y Prosperar, es un proyecto personal, ya que tengo un canal de youtube con un amigo/socio de supervivencia, consejos y guias. La idea es ir agregando funcionalidades a la web. 
-Por ahora esta hecha para que cumpla con la tercer pre entrega, pero la iré mejorando
+SYP - Sobrevivir y Prosperar, es un proyecto personal, ya que tengo un canal de youtube con un amigo/socio, el canal es con tematica de supervivencia, consejos y guias.  
 
-desde la pagina principal, se puede acceder a todas las funcionalidades, ya sea listados, formularios o busqueda. tiene botones interactivos, imagenes que redirecciona a Youtube y el icono de instagram es funcional.
+les dejo un link con el video en youtube para que puedan ver las funcionalidades https://www.youtube.com/watch?v=qjUkYrx0XgE
 
-Sistema de Gestión de Videos
-Este es el proyecto "SYP", un sistema de gestión de videos desarrollado con Django. El proyecto permite buscar videos por número y gestionar suscriptores, ademas los suscriptores pueden subir historias de supervivencia.
+Para acceder a las funcionalidades de la web, necesitas loguearte, ya que la mayoria de los campos estan bloqueados, una vez que accediste desde la pagina principal, se habilitan todas las funcionalidades, ya sea listados, formularios o busqueda. tiene botones interactivos, imagenes que redirecciona a Youtube y el icono de instagram es funcional.
+
+Este es el proyecto "SYP", un sistema que gestiona videos, interactua con los internautas a traves de las experiencias que pueden subir a la web, y tambien pueden buscar informacion de herramientas utiles para la supervivencia, el mismo fue desarrollado con Django. 
 
 Tabla de Contenidos
--Requisitos
--Instalación
--Configuración
--Uso
--Rutas Disponibles
+1-Requisitos
+2-Instalación
+3-Configuración
+4-Uso
+5-Rutas Disponibles
 
-Antes de empezar, asegúrate de tener instalado lo siguiente:
+
+1-Antes de empezar, asegúrate de tener instalado lo siguiente:
 
 Python 3.8 o superior
 Django 3.0 o superior
 Git
 
-Instalación
+
+2-Instalación
 Clona el repositorio en tu máquina local:
 
 bash
 Copiar código
 
    git clone https://github.com/federicomertl/SYP.git
->>>>>>> e3acdc87e15ad9fb1fafb69ab167849ecb63c3da
+
 
 cd SYP
 
@@ -38,55 +40,62 @@ Copiar código
 
   python manage.py migrate
 
-(Opcional) Carga datos iniciales:
 
-bash
-Copiar código
+3-Configuración (yo no use un entorno virtual)
+Asegúrate de tener un archivo .env en la raíz del proyecto con la configuración necesaria para tu entorno de desarrollo. 
 
-  python manage.py loaddata initial_data.json
-
-Configuración (yo no use un entorno virtual)
-Asegúrate de tener un archivo .env en la raíz del proyecto con la configuración necesaria para tu entorno de desarrollo. Un ejemplo de archivo .env podría ser:
-
-makefile
-Copiar código
-DEBUG=True
-SECRET_KEY=tu_clave_secreta
-DATABASE_URL=sqlite:///db.sqlite3
-Uso
-Para ejecutar el servidor de desarrollo, utiliza el siguiente comando:
+ejecutar el servidor de desarrollo, utiliza el siguiente comando:
 
 bash
 Copiar código
 
   python manage.py runserver
 
-Luego, abre tu navegador y ve a http://127.0.0.1:8000/ para ver la aplicación en acción.
+estas son las dependencias que yo tengo instaladas
 
-Rutas Disponibles
-Búsqueda de Videos
-Ruta: /busqueda-video/
-Método: GET
-Descripción: Página para buscar videos por número.
-Resultados de Búsqueda
-Ruta: /buscar/
-Método: GET
-Descripción: Página que muestra los resultados de la búsqueda de videos.
-Administración de Suscriptores
-Ruta: /admin/
-Método: GET
-Descripción: Página de administración para gestionar suscriptores y otros modelos.
+asgiref==3.8.1
+certifi==2024.2.2
+distlib==0.3.8
+Django==5.0.6
+filelock==3.14.0
+pillow==10.3.0
+pipenv==2023.12.1
+platformdirs==4.2.2
+setuptools==69.5.1
+sqlparse==0.5.0
+tzdata==2024.1
+virtualenv==20.26.2
+
+4-Luego, abre tu navegador y ve a http://127.0.0.1:8000/ para ver la aplicación en acción.
+
+
+5-Rutas Disponibles
+
+INICIO
+NOSOTROS - Descripcion de mi
+VIDEOS - Listado de videos con su link
+EXPERIENCIAS - Listado de Experiencias de usuarios
+LISTA DE HERRAMIENTAS - Listado de herramientas utiles para la supervivencia
+BUSQUEDA DE VIDEOS - Busqueda de videos por número
+CREAR HERRAMIENTAS - Esta funcionalidad solo esta habilitado para el Staff, podemos agregar nuevas herramientas
+CARGAR NUEVOS VIDEOS - Esta funcionalidad solo esta habilitado para el Staff, podemos agregar nuevos videos
+CUENTANOS TUS EXPERIENCIAS - El usuario puede contarnos sus experiencias
+AVATAR - Podemos agregar un avatar a nuestro perfil
+EDITAR PERFIL - Podemos editar el perfil, cambiar datos ya sea nombre de usuario o password
+
 
 tambien cree un super usuario para que puedan corroborar la informacion desde el admin ingresando a
 http://127.0.0.1:8000/admin
 
 usuario: CristianoRonaldo
 password: Elreydelamilanga
->>>>>>> e3acdc87e15ad9fb1fafb69ab167849ecb63c3da
+
+
+
 
 Quedo atento a sus comentarios
 
 Saludos
 
 Federicomertl
->>>>>>> e3acdc87e15ad9fb1fafb69ab167849ecb63c3da
+

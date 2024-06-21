@@ -3,15 +3,22 @@
         <ul class="links">
 
             <li><a href="{% url 'Inicio' %}">Inicio</a></li>
-            <li><a href="{% url 'ListaVideos' %}">Lista de videos</a></li>
-            <li><a href="{% url 'ListaSuscriptores' %}">Lista de Suscriptores</a></li>
-            <li><a href="{% url 'ListaExperiencias' %}">Lista de Experiencias</a></li>
-            <li><a href="{% url 'VideoFormulario' %}">Formulario de videos</a></li>
-            <li><a href="{% url 'SuscriptorFormulario' %}">Formulario de suscriptores</a></li>
-            <li><a href="{% url 'ExperienciaFormulario' %}">Formulario de experiencias</a></li>
+            <li><a href="{% url 'about' %}">Nosotros</a></li>
+            <li><a href="{% url 'ListaVideos' %}">videos</a></li>
+            <li><a href="{% url 'ListaExperiencias' %}">Experiencias</a></li>
+            <li><a href="{% url 'survival_tool_list' %}">Lista de herramientas</a></li>
             <li><a href="{% url 'BusquedaVideo' %}">Busqueda de videos</a></li>
-           
-
-
+            {% if user.is_staff %}
+            <li><a href="{% url 'survival_tool_form' %}">Crear herramientas</a></li>
+            <li><a href="{% url 'VideoFormulario' %}">Cargar nuevos videos</a></li>
+            <li><a href="{% url 'message_list' %}">Mensajes de usuarios</a></li>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'ExperienciaFormulario' %}">Cuentanos tus experiencias</a></li>
+            <li><a href="{% url 'AgregarAvatar' %}">Avatar</a></li>
+            <li><a href="{% url 'EditaPerfil' %}">Editar perfil</a></li>
+            <li><a href="{% url 'leave_message' %}">Deja un mensaje al Staff</a></li>
+            {% endif %}
+            
         </ul>
     </nav>

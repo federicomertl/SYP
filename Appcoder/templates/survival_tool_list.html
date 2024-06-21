@@ -1,0 +1,23 @@
+{% extends "padre.html" %}
+
+{% block contenidoQueCambia %}
+
+{% block content %}
+  <h1>Herramientas de supervivencia</h1>
+  {% if user.is_staff %}
+  <a href="{% url 'survival_tool_form' %}">Agregar Herramienta</a>
+  {% endif %}
+  <ul>
+    {% for tool in tools %}
+      <li>
+        <a href="{% url 'survival_tool_detail' tool.pk %}">{{ tool.name }}</a>
+        {% if user.is_staff %}
+        (<a href="{% url 'survival_tool_update' tool.pk %}">Editar</a>,
+        <a href="{% url 'survival_tool_delete' tool.pk %}">Borrar</a>)
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+{% endblock contenidoQueCambia %}

@@ -1,0 +1,14 @@
+{% extends "padre.html" %}
+
+{% block contenidoQueCambia %}
+
+{% block content %}
+  <h1>{{ tool.name }}</h1>
+  <p>{{ tool.description }}</p>
+  {% if tool.image %}
+    <img src="{{ tool.image.url }}" alt="{{ tool.name }}">
+  {% endif %}
+  <p><a href="{% url 'survival_tool_list' %}">Back to list</a></p>
+{% endblock %}
+
+{% endblock contenidoQueCambia %}

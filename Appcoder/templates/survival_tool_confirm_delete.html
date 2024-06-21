@@ -1,0 +1,15 @@
+{% extends "padre.html" %}
+
+{% block contenidoQueCambia %}
+
+{% block content %}
+  <h1>Delete Tool</h1>
+  <p>Are you sure you want to delete "{{ tool.name }}"?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Yes, delete</button>
+    <a href="{% url 'survival_tool_list' %}" class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}
+
+{% endblock contenidoQueCambia %}

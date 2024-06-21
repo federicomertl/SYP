@@ -1,0 +1,7 @@
+{% extends "padre.html" %}
+
+{% block content %}
+<h2>Home</h2>
+<p>Welcome, {{ user.username }}!</p>
+<a href="{% url 'logout' %}">Logout</a>
+{% endblock %}

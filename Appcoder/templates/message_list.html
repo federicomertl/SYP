@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+  <h1>Lista de Mensajes</h1>
+  <ul>
+    {% for message in messages %}
+      <li>
+        <p>{{ message.text }}</p>
+        <p>Publicado por: {{ message.user.username }} en {{ message.created_at }}</p>
+        <form action="{% url 'delete_message' message.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit">Eliminar</button>
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock contenidoQueCambia %}

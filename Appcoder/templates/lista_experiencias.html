@@ -9,6 +9,13 @@
                 {{ Experiencia.nickname}} - {{ Experiencia.fecha }} - {{ Experiencia.historia }} 
                 
             </li>
+            <div>
+                {% if user.is_staff %}
+                <form action="{% url 'EliminaExperiencia' Experiencia.id %}" method="POST">{% csrf_token %}<button type="submit"> Eliminar </button>
+
+                </form> 
+                {% endif %}
+            </div>
         {% endfor %}
     </ul>
 {% endblock contenidoQueCambia %}

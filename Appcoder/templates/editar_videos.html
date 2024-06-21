@@ -2,11 +2,11 @@
 
 {% block contenidoQueCambia %}
 
-    <form action="{% url 'SuscriptorFormulario' %}" method="post">{% csrf_token %}
+    <form action="{% url 'EditaVideo' id %}" method="post">{% csrf_token %}
 
         {{miFormulario.as_p}}
 
-        <button type="submit"> Crear </button>
+        <button type="submit"> Actualizar </button>
 
 
     </form>
